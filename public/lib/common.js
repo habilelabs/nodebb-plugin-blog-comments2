@@ -54,14 +54,14 @@ var blogComments2Common = function (commentPositionDiv, nbb, kwargs) {
 
     function authenticate(type) {
         savedText = contentDiv.value;
-        modal = window.open(nbb.url + "/auth/examsbook","_blank","toolbar=no, scrollbars=no, resizable=no, width=600, height=675");
-        var timer = setInterval(function() {
+        modal = window.open(nbb.url + "/auth/examsbook");
+       /* var timer = setInterval(function() {
             if(modal.closed) {
                 clearInterval(timer);
                 pagination = 0;
                 reloadComments();
             }
-        }, 500);
+        }, 500);*/
     }
 
     function normalizePost(post) {
