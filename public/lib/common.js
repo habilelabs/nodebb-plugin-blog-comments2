@@ -332,12 +332,13 @@ var blogComments2Common = function (commentPositionDiv, nbb, kwargs) {
                         markdown : markdown,
                         title : articleTitle,
                         url : articlePath,
+
                         id : nbb.articleID,
                         tags : JSON.stringify(nbb.tags || ''),
                         blogger :  nbb.blogger,
                         cid: nbb.cid || -1
                     }
-                    xpost(newXHR, nbb.url + '/comments/publish', data);
+                    xpost(postXHR, nbb.url + '/comments/publish', data);
                 }
             }
         }

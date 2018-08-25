@@ -1,6 +1,6 @@
 {
-  "name": "nodebb-plugin-blog-comments2",
-  "version": "0.9.2",
+  "name": "nodebb-plugin-blog-examsbook",
+  "version": "0.9.8",
   "description": "NodeBB Blog Comments (Ghost / WP Commenting Engine)",
   "main": "library.js",
   "scripts": {
@@ -20,8 +20,8 @@
     "comments"
   ],
   "author": {
-    "name": "River",
-    "email": "revir.qing@gmail.com"
+    "name": "Shankar Morwal",
+    "email": "morwal89@gmail.com"
   },
   "license": "BSD-2-Clause",
   "bugs": {
