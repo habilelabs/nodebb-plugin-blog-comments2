@@ -49,6 +49,7 @@ var blogComments2Common = function (commentPositionDiv, nbb, kwargs) {
     var XHR = newXHR(), pagination = 0, modal;
     var voteXHR = newXHR();
     var bookmarkXHR = newXHR();
+    var postXHR = newXHR();
     var mainPost;
 
     function authenticate(type) {
@@ -326,6 +327,17 @@ var blogComments2Common = function (commentPositionDiv, nbb, kwargs) {
                     document.getElementById('nodebb-content-cid').value = nbb.cid || -1;
                     document.getElementById('nodebb-content-blogger').value = nbb.blogger;
                     document.getElementById('nodebb-content-tags').value = JSON.stringify(nbb.tags || '');
+                    //post directly................./*
+                    var data = {
+                        markdown : markdown,
+                        title : articleTitle,
+                        url : articlePath,
+                        id : nbb.articleID,
+                        tags : JSON.stringify(nbb.tags || ''),
+                        blogger :  nbb.blogger,
+                        cid: nbb.cid || -1
+                    }
+                    xpost(newXHR, nbb.url + '/comments/publish', data);
                 }
             }
         }
