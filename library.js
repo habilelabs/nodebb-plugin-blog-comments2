@@ -199,7 +199,7 @@
 			commentID = req.body.id,
 			tags = req.body.tags,
 			blogger = req.body.blogger || 'default',
-			uid = req.user ? req.user.uid : 0,
+			uid = req.user ? req.user.uid : 2,
 			cid = JSON.parse(req.body.cid);
 
 		if (cid === -1) {
@@ -229,9 +229,10 @@
 				groups.isMember(uid, 'publishers', next);
 			}
 		}, function(err, userStatus) {
-			if (!userStatus.isAdministrator && !userStatus.isPublisher) {
+			//lets create it without user as well.
+			/*if (!userStatus.isAdministrator && !userStatus.isPublisher) {
 				return res.json({error: "Only Administrators or members of the publishers group can publish articles"});
-			}
+			}*/
 
 			topics.post({
 				uid: uid,
@@ -250,11 +251,11 @@
 						}
 
 						db.setObjectField('blog-comments:'+blogger, commentID, result.postData.tid);
-						var rurl = (req.header('Referer') || '/') + '#nodebb-comments';
+						/*var rurl = (req.header('Referer') || '/') + '#nodebb-comments';
 						if (url.indexOf('#') !== -1) {
 							// compatible for mmmw's blog, he uses hash in url;
 							rurl = url;
-						}
+						}*/
 
                         res.json({message : 'comments created.'})
 					});
