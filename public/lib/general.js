@@ -35,12 +35,12 @@
 	nbb.loadCSS = loadCSS;
 
 
-	loadCSS(nbb.commentsCSS || (nbb.url + '/plugins/nodebb-plugin-blog-comments2/css/comments.css'));
+	loadCSS(nbb.commentsCSS || (nbb.url + '/plugins/nodebb-plugin-blog-examsbook/css/comments.css'));
 
 	// fix youtube embed video
 	if (window.jQuery) {
 		loadScript(nbb.url + '/plugins/nodebb-plugin-youtube-embed/static/lib/lazyYT.js');
-		loadCSS(nbb.url + '/plugins/nodebb-plugin-blog-comments2/css/youtube-embed-video.css');
+		loadCSS(nbb.url + '/plugins/nodebb-plugin-blog-examsbook/css/youtube-embed-video.css');
 	}
 
 	var commentPositionDiv = document.getElementById('nodebb-comments');
@@ -55,7 +55,7 @@
         nbb.commentElement.appendChild(commentPositionDiv);
     }
 
-	loadScript(nbb.url + '/plugins/nodebb-plugin-blog-comments2/lib/common.js', function () {
+	loadScript(nbb.url + '/plugins/nodebb-plugin-blog-examsbook/lib/common.js', function () {
 		blogComments2Common(commentPositionDiv, nbb);
 	});
 
