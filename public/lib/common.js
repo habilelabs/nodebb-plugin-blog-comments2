@@ -404,6 +404,14 @@ var blogComments2Common = function (commentPositionDiv, nbb, kwargs) {
         }
     };
 
+    postXHR.onload = function () {
+        postXHR.isBusy = false;
+        if (postXHR.status >= 200 && postXHR.status < 400) {
+           //TODO
+            reloadComments();
+        }
+    };
+
     function reloadComments() {
         xget(XHR, nbb.url + '/comments/get/' + (nbb.blogger || 'default') + '/' + nbb.articleID + '/' + pagination);
     }

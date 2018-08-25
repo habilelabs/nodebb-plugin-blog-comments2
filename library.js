@@ -256,7 +256,7 @@
 							rurl = url;
 						}
 
-						res.redirect(rurl);
+                        res.json({message : 'comments created.'})
 					});
 				} else {
 					res.json({error: "Unable to post topic", result: result});
